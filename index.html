@@ -1,417 +1,665 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
-    <title>
-      Rodrigo Maduro | MSc Applicant | Full-Stack Development & CyberSecurity
-      Enthusiast
-    </title>
-    <meta
-      name="description"
-      content="Portfolio for MSc Application - Highlighting Research, Projects, and Skills"
-    />
-    <meta
-      name="keywords"
-      content="AI, Machine Learning, Research, Publications, MSc Application"
-    />
-    <link rel="stylesheet" href="index.css" />
-  </head>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rodrigo Maduro — Junior IT Consultant</title>
+  <meta name="description" content="Junior IT Consultant at Timestamp — ITSM, ITOM, APM and observability."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:      #020409;
+      --bg2:     #080d18;
+      --bg3:     #0c1220;
+      --border:  #1a2540;
+      --border2: #243050;
+      --cyan:    #00d4ff;
+      --green:   #00ff9d;
+      --amber:   #ffb800;
+      --white:   #e8f0ff;
+      --muted:   #4a5878;
+      --mono:    'JetBrains Mono', monospace;
+      --sans:    'Syne', sans-serif;
+    }
 
-  <body>
-    <!-- ***** Header ***** -->
-    <header class="header" id="top">
-      <div class="row">
-        <nav class="nav">
-          <ul class="nav__items">
-            <li class="nav__item">
-              <a href="#education" class="nav__link">Education</a>
-            </li>
-            <li class="nav__item">
-              <a href="#work" class="nav__link">Experience</a>
-            </li>
-            <li class="nav__item">
-              <a href="#projects" class="nav__link">Projects</a>
-            </li>
-            <li class="nav__item">
-              <a href="#skills" class="nav__link">Skills</a>
-            </li>
-            <li class="nav__item">
-              <a href="#contact" class="nav__link">Contact</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="header__text-box row">
-        <div class="header__text">
-          <h1 class="heading-primary">
-            <span>Rodrigo Maduro</span>
-          </h1>
-          <p>MSc Applicant | Full-Stack Development & UI/UX Enthusiast</p>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; font-size:62.5%; }
+    body {
+      font-family: var(--mono);
+      font-size: 1.4rem;
+      background: var(--bg);
+      color: var(--white);
+      overflow-x: hidden;
+      cursor: crosshair;
+    }
+
+    /* scanlines */
+    body::before {
+      content:'';
+      position:fixed; inset:0;
+      background: repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.07) 2px,rgba(0,0,0,.07) 4px);
+      pointer-events:none;
+      z-index:9999;
+    }
+
+    /* grid bg */
+    #grid-bg {
+      position:fixed; inset:0; z-index:0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size:40px 40px;
+      opacity:.3;
+      animation: gridShift 20s linear infinite;
+    }
+    @keyframes gridShift { from{background-position:0 0} to{background-position:40px 40px} }
+
+    #particles { position:fixed; inset:0; z-index:1; pointer-events:none; }
+
+    .wrap { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:0 3rem; }
+
+    /* ── Nav ── */
+    nav {
+      position:fixed; top:0; left:0; right:0; z-index:100;
+      border-bottom:1px solid var(--border);
+      background:rgba(2,4,9,.88);
+      backdrop-filter:blur(12px);
+    }
+    .nav-inner {
+      max-width:1100px; margin:0 auto; padding:1.4rem 3rem;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .nav-logo {
+      font-family:var(--sans); font-weight:800; font-size:1.6rem;
+      color:var(--cyan); text-decoration:none; letter-spacing:.05em;
+    }
+    .nav-logo span { color:var(--white); }
+    .nav-links { display:flex; gap:3rem; list-style:none; }
+    .nav-links a {
+      text-decoration:none; color:var(--muted);
+      font-size:1.2rem; letter-spacing:.12em; text-transform:uppercase;
+      transition:color .2s; position:relative;
+    }
+    .nav-links a::after {
+      content:''; position:absolute; bottom:-4px; left:0; right:100%;
+      height:1px; background:var(--cyan); transition:right .25s ease;
+    }
+    .nav-links a:hover { color:var(--cyan); }
+    .nav-links a:hover::after { right:0; }
+    .nav-status { display:flex; align-items:center; gap:.8rem; font-size:1.1rem; color:var(--muted); }
+    .status-dot {
+      width:6px; height:6px; border-radius:50%;
+      background:var(--green); box-shadow:0 0 6px var(--green);
+      animation:pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+    /* ── Hero ── */
+    #hero {
+      min-height:100vh; display:flex; align-items:center; padding-top:8rem;
+    }
+    .hero-grid {
+      display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center;
+    }
+    .hero-tag {
+      font-size:1.1rem; letter-spacing:.2em; text-transform:uppercase;
+      color:var(--cyan); margin-bottom:2rem;
+      display:flex; align-items:center; gap:1rem;
+    }
+    .hero-tag::before { content:'> '; color:var(--green); }
+    h1 {
+      font-family:var(--sans); font-size:clamp(4rem,6vw,6.5rem);
+      font-weight:800; line-height:1.05; letter-spacing:-.02em; margin-bottom:1.5rem;
+    }
+    h1 .accent { color:var(--cyan); }
+    .hero-sub {
+      font-size:1.45rem; color:var(--muted); line-height:1.85;
+      margin-bottom:3.5rem; max-width:42rem;
+    }
+    .hero-sub strong { color:var(--white); font-weight:500; }
+    .btn-row { display:flex; gap:1.5rem; flex-wrap:wrap; }
+    .btn {
+      display:inline-flex; align-items:center; gap:.8rem;
+      padding:1.1rem 2.6rem; text-decoration:none;
+      font-family:var(--mono); font-size:1.2rem;
+      letter-spacing:.1em; text-transform:uppercase;
+      border:1px solid; transition:all .2s; position:relative; overflow:hidden;
+    }
+    .btn::before {
+      content:''; position:absolute; inset:0;
+      background:currentColor; opacity:0; transition:opacity .2s;
+    }
+    .btn:hover::before { opacity:.08; }
+    .btn-primary { color:var(--cyan); border-color:var(--cyan); }
+    .btn-primary:hover { box-shadow:0 0 20px rgba(0,212,255,.2); }
+    .btn-ghost { color:var(--muted); border-color:var(--border2); }
+    .btn-ghost:hover { color:var(--white); border-color:var(--white); }
+
+    /* terminal */
+    .terminal {
+      background:var(--bg2); border:1px solid var(--border2); border-radius:8px;
+      overflow:hidden; box-shadow:0 0 50px rgba(0,212,255,.05);
+    }
+    .terminal-bar {
+      background:var(--bg3); border-bottom:1px solid var(--border);
+      padding:1rem 1.6rem; display:flex; align-items:center; gap:1rem;
+    }
+    .t-dot { width:10px; height:10px; border-radius:50%; }
+    .t-red   { background:#ff5f57; }
+    .t-amber { background:#febc2e; }
+    .t-green { background:#28c840; }
+    .t-title { margin:0 auto; font-size:1.1rem; color:var(--muted); }
+    .terminal-body { padding:2.5rem; font-size:1.3rem; line-height:2.1; }
+    .t-prompt { color:var(--green); }
+    .t-key    { color:var(--cyan); }
+    .t-val    { color:var(--amber); }
+    .t-cmt    { color:var(--muted); }
+    .t-arr    { color:var(--green); }
+    .blink {
+      display:inline-block; width:8px; height:1.4em;
+      background:var(--cyan); vertical-align:text-bottom;
+      animation:blink .9s step-end infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    /* ── Sections ── */
+    section { padding:9rem 0; position:relative; z-index:2; }
+    .section-label {
+      font-size:1.1rem; letter-spacing:.2em; text-transform:uppercase;
+      color:var(--cyan); margin-bottom:1.2rem;
+      display:flex; align-items:center; gap:1rem;
+    }
+    .section-label::before { content:'//'; color:var(--muted); }
+    .section-title {
+      font-family:var(--sans); font-size:clamp(2.8rem,4vw,4.4rem);
+      font-weight:800; margin-bottom:5rem; line-height:1.1;
+    }
+    .section-title span { color:var(--cyan); }
+    hr.divider { border:none; border-top:1px solid var(--border); margin:0; }
+
+    /* ── Experience cards ── */
+    .exp-list { display:flex; flex-direction:column; gap:2.5rem; }
+    .exp-card {
+      background:var(--bg2); border:1px solid var(--border);
+      border-left:3px solid var(--cyan); padding:3rem;
+      transition:border-color .2s, box-shadow .2s;
+    }
+    .exp-card:hover { box-shadow:0 0 30px rgba(0,212,255,.07); }
+    .exp-card.green-l { border-left-color:var(--green); }
+    .exp-header {
+      display:flex; justify-content:space-between; align-items:flex-start;
+      gap:2rem; margin-bottom:1.5rem; flex-wrap:wrap;
+    }
+    .exp-role { font-family:var(--sans); font-size:2rem; font-weight:700; }
+    .exp-co   { color:var(--cyan); font-size:1.3rem; margin-top:.3rem; }
+    .exp-card.green-l .exp-co { color:var(--green); }
+    .exp-badge {
+      display:inline-block; padding:.3rem 1rem;
+      border:1px solid var(--green); color:var(--green);
+      font-size:.95rem; letter-spacing:.1em; margin-bottom:.6rem;
+    }
+    .exp-meta { font-size:1.15rem; color:var(--muted); text-align:right; flex-shrink:0; }
+    .exp-desc {
+      color:rgba(232,240,255,.65); line-height:1.9;
+      font-size:1.3rem; margin-bottom:2rem;
+    }
+    .exp-desc li { margin-bottom:.5rem; }
+    .exp-tags { display:flex; flex-wrap:wrap; gap:.8rem; }
+    .tag {
+      padding:.4rem 1.1rem;
+      background:rgba(0,212,255,.06); border:1px solid rgba(0,212,255,.2);
+      color:var(--cyan); font-size:1.05rem; letter-spacing:.05em;
+    }
+    .tag.g {
+      background:rgba(0,255,157,.06); border-color:rgba(0,255,157,.2);
+      color:var(--green);
+    }
+
+    /* ── Skills ── */
+    .skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(28rem,1fr)); gap:3rem; }
+    .skill-group-title {
+      font-size:1.1rem; letter-spacing:.18em; text-transform:uppercase;
+      color:var(--muted); margin-bottom:2rem;
+      padding-bottom:1rem; border-bottom:1px solid var(--border);
+    }
+    .skill-items { display:flex; flex-direction:column; gap:1.3rem; }
+    .skill-item  { display:flex; align-items:center; gap:1.5rem; }
+    .skill-name  { width:15rem; font-size:1.3rem; color:rgba(232,240,255,.8); flex-shrink:0; }
+    .skill-bar   { flex:1; height:3px; background:var(--border); position:relative; }
+    .skill-fill  {
+      position:absolute; left:0; top:0; bottom:0;
+      background:linear-gradient(90deg,var(--cyan),var(--green));
+      transition:width 1.2s cubic-bezier(.4,0,.2,1);
+    }
+    .skill-pct { font-size:1.1rem; color:var(--muted); width:3.5rem; text-align:right; }
+
+    /* ── Projects ── */
+    .proj-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(30rem,1fr)); gap:2rem; }
+    .proj-card {
+      background:var(--bg2); border:1px solid var(--border);
+      padding:2.8rem; transition:all .25s; position:relative; overflow:hidden;
+    }
+    .proj-card::after {
+      content:''; position:absolute; top:0; left:0; right:0; height:2px;
+      background:linear-gradient(90deg,var(--cyan),transparent);
+      opacity:0; transition:opacity .3s;
+    }
+    .proj-card:hover { border-color:var(--border2); transform:translateY(-3px); }
+    .proj-card:hover::after { opacity:1; }
+    .proj-lang { font-size:1rem; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); margin-bottom:1.2rem; }
+    .proj-title { font-family:var(--sans); font-size:1.8rem; font-weight:700; margin-bottom:1rem; }
+    .proj-desc  { font-size:1.25rem; color:rgba(232,240,255,.5); line-height:1.8; margin-bottom:2rem; }
+    .proj-link  {
+      display:inline-flex; align-items:center; gap:.6rem;
+      font-size:1.1rem; color:var(--cyan); text-decoration:none;
+      letter-spacing:.08em; text-transform:uppercase; transition:gap .2s;
+    }
+    .proj-link:hover { gap:1rem; }
+
+    /* ── Contact ── */
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; }
+    .contact-text p { color:rgba(232,240,255,.6); font-size:1.4rem; line-height:1.9; margin-bottom:2rem; }
+    .contact-links { display:flex; flex-direction:column; gap:1.5rem; }
+    .contact-link {
+      display:flex; align-items:center; gap:1.5rem;
+      padding:1.8rem 2.2rem; background:var(--bg2);
+      border:1px solid var(--border); text-decoration:none;
+      color:var(--white); transition:all .2s; font-size:1.3rem;
+    }
+    .contact-link:hover { border-color:var(--cyan); color:var(--cyan); box-shadow:0 0 20px rgba(0,212,255,.06); }
+    .cl-icon  { color:var(--cyan); font-size:1.6rem; width:2rem; text-align:center; }
+    .cl-label { font-size:1.05rem; color:var(--muted); text-transform:uppercase; letter-spacing:.1em; display:block; margin-bottom:.2rem; }
+
+    /* ── Footer ── */
+    footer { border-top:1px solid var(--border); padding:3rem 0; position:relative; z-index:2; }
+    .footer-inner {
+      max-width:1100px; margin:0 auto; padding:0 3rem;
+      display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;
+    }
+    .footer-copy { font-size:1.2rem; color:var(--muted); }
+    .footer-copy span { color:var(--cyan); }
+
+    /* ── Animations ── */
+    .fade-in { opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity:1; transform:none; }
+
+    /* ── Responsive ── */
+    @media (max-width:900px) {
+      .hero-grid    { grid-template-columns:1fr; gap:4rem; }
+      .contact-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width:600px) {
+      .nav-links { display:none; }
+      h1 { font-size:4rem; }
+    }
+
+    ::-webkit-scrollbar       { width:4px; }
+    ::-webkit-scrollbar-track { background:var(--bg); }
+    ::-webkit-scrollbar-thumb { background:var(--border2); }
+    ::selection { background:rgba(0,212,255,.2); color:var(--cyan); }
+  </style>
+</head>
+<body>
+
+<div id="grid-bg"></div>
+<canvas id="particles"></canvas>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">rm<span>.dev</span></a>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-status">
+      <div class="status-dot"></div>
+      <span>Lisbon, PT</span>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tag">sys/init — portfolio v2.0</div>
+        <h1>Rodrigo<br><span class="accent">Maduro</span></h1>
+        <p class="hero-sub">
+          <strong>Junior IT Consultant @ Timestamp</strong> — working daily with enterprise ITSM and ITOM platforms.<br><br>
+          Focused on IT Discovery, Configuration Management and Application Performance Monitoring. Curious about where all of this is heading: Cloud, Kubernetes and DevOps.
+        </p>
+        <div class="btn-row">
+          <a href="#experience" class="btn btn-primary">View Experience →</a>
+          <a href="CV_English_Rodrigo_Maduro.pdf" download class="btn btn-ghost">Download CV</a>
         </div>
       </div>
-    </header>
 
-    <main>
-      <!-- ***** Education ***** -->
-      <section class="education" id="education">
-        <div class="row">
-          <h2>Education</h2>
-          <div class="education__item">
-            <p><strong>Bachelor's Degree in Computer Engineering</strong> (2022 – Current)</p>
-            <p>Instituto Politécnico de Setúbal | Setúbal, Portugal</p>
-            <p>The course provides a solid foundation in programming, database modeling, and software design patterns. I am developing essential skills in creating efficient, modular solutions and gaining a practical understanding of best development practices. This academic journey strengthens my ability to contribute effectively to collaborative projects.</p>
-            <p>Website: <a href="https://www.ips.pt/ips_si/web_page.inicial" target="_blank">Instituto Politécnico de Setúbal</a></p>
-            <p>Field of Study: Software and Applications Development and Analysis | EQF Level 6 | ECTS Credits: 180 | <a href="Bachelor_In_Informatic_Engineering_Syllabus.pdf" download class="link">Bachelor's Syllabus</a></p>
-          </div>
-          <div class="education__item">
-            <p><strong>Cambridge English C1 Advanced</strong> (2022)</p>
-            <p>Cambridge English | Barreiro, Portugal</p>
-            <p>This certification attests to my advanced proficiency in English, qualifying me for complex academic and professional interactions. It is a valuable asset for tackling global challenges that require advanced language skills.</p>
-            <p>Field of Study: Personal Skills and Development | Website: <a href="https://www.cambridgeenglish.org" target="_blank">Cambridge English</a></p>
-            <p> CAE Certificate: <a href="C1 Certificate.pdf" download class="link">See my certificate</a></p>
-          </div>
-          <div class="education__item">
-            <p><strong>Upper Intermediate English Language Tuition Course</strong> (2018)</p>
-            <p>Harrow House International College | Swanage, United Kingdom</p>
-            <p>This course provided an enriching experience, strengthening my proficiency in English through intensive classes focusing on communication, grammar, and vocabulary.</p>
-            <p>Field of Study: Personal Skills and Development</p>
-            <p> Certificate of Studies: <a href="Harrow House Certificate.pdf" download class="link">See my certificate</a></p>
-          </div>
+      <div class="terminal fade-in">
+        <div class="terminal-bar">
+          <div class="t-dot t-red"></div>
+          <div class="t-dot t-amber"></div>
+          <div class="t-dot t-green"></div>
+          <span class="t-title">rodrigo@workstation:~</span>
         </div>
-      </section>
-      
-
-      <!-- ***** Work Experience ***** -->
-      <section class="work" id="work">
-        <div class="row">
-          <h2>Work Experience</h2>
-          <div class="work__box">
-            <div class="work__text">
-              <p><strong>Frontend Developer Internship</strong></p>
-              <p>Petrotec | Seixal, Portugal | 01/07/2024 – 31/07/2024</p>
-              <p>
-                <strong>Key Technologies:</strong> Vue.js, Vuex Store, Bootstrap
-                & Bootstrap Vue, Node.js, REST APIs
-              </p>
-
-              <p><strong>Main Responsibilities:</strong></p>
-              <ul class="work__list">
-                <li>
-                  <strong>Frontend Development:</strong> Designed and
-                  implemented responsive, user-friendly interfaces using
-                  Bootstrap Vue.
-                </li>
-                <li>
-                  <strong>State Management:</strong> Integrated Vuex Store to
-                  centralize and manage application state efficiently.
-                </li>
-                <li>
-                  <strong>Node.js Application Development:</strong> Developed an
-                  OTP (One-Time Password) system for login authentication.
-                </li>
-              </ul>
-
-              <p>Industry: Manufacturing | Systems Development Department |  Website:
-                <a href="https://www.petrotec.com/" target="_blank" class="link"
-                  >www.petrotec.com</a
-                ></p>
-              <p>
-                <p> Internship Certificate: <a href="Petrotec Summer Internship Certificate.pdf" download class="link">See my certificate</a></p>
-              </p>
-            </div>
-          </div>
+        <div class="terminal-body">
+          <div><span class="t-prompt">$ </span>cat profile.yaml</div>
+          <div>&nbsp;</div>
+          <div><span class="t-key">name</span>:        <span class="t-val">Rodrigo Maduro</span></div>
+          <div><span class="t-key">role</span>:        <span class="t-val">Junior IT Consultant</span></div>
+          <div><span class="t-key">company</span>:     <span class="t-val">Timestamp · Lisbon</span></div>
+          <div><span class="t-key">education</span>:   <span class="t-val">B.Sc. CS&amp;E — IPS (final yr)</span></div>
+          <div><span class="t-key">stack</span>:</div>
+          <div>&nbsp; <span class="t-arr">-</span> <span class="t-val">OpenText UCMDB &amp; UD</span></div>
+          <div>&nbsp; <span class="t-arr">-</span> <span class="t-val">Cisco AppDynamics</span></div>
+          <div>&nbsp; <span class="t-arr">-</span> <span class="t-val">OpenText SMAX &amp; OO</span></div>
+          <div><span class="t-key">curious_about</span>:</div>
+          <div>&nbsp; <span class="t-arr">-</span> <span class="t-cmt">Cloud · Kubernetes · DevOps</span></div>
+          <div><span class="t-key">english</span>:     <span class="t-val">C1 Cambridge Advanced</span></div>
+          <div>&nbsp;</div>
+          <div><span class="t-prompt">$ </span><span class="blink"></span></div>
         </div>
-      </section>
-
-      <!-- ***** Projects ***** -->
-      <section class="projects" id="projects">
-        <div class="row">
-          <h2>Projects</h2>
-
-          <div class="project__box">
-            <h3>Database Project</h3>
-            <p>
-              In this project, my focus was on implementing the relational
-              database in MySQL and defining the application logic for managing
-              and ensuring data integrity. The goal was to develop a set of SQL
-              commands that would allow me to manipulate the database schema. In
-              addition to defining queries for retrieving system information, I
-              needed to develop procedures and mechanisms that maintained
-              referential integrity and provided a secure application by
-              offering a data-level API.
-            </p>
-            <h4>Languages Used:</h4>
-            <ul>
-              <li>MySQL</li>
-            </ul>
-            <div class="work__links">
-              <a
-                href="https://github.com/rrmaduro/DataBase-Project"
-                target="_blank"
-                class="btn"
-                >GitHub Repository</a
-              >
-            </div>
-          </div>
-
-          <div class="project__box">
-            <h3>AdventureWorks ERP System</h3>
-            <p>
-              As part of the restructuring developed a new ERP system to replace
-              an outdated ERP that previously relied on Excel files for managing
-              sales data. This required data modeling, migration, and
-              integration into a new SQL Server database to ensure scalability,
-              efficiency, and proper data organization.
-            </p>
-            <h4>Languages Used:</h4>
-            <ul>
-              <li>SQL</li>
-              <li>TSQL</li>
-              <li>MongoDB</li>
-            </ul>
-            <div class="work__links">
-              <a
-                href="https://github.com/rrmaduro/DataBase-Complements-Project"
-                target="_blank"
-                class="btn"
-                >GitHub Repository</a
-              >
-            </div>
-          </div>
-
-          <div class="project__box">
-            <h3>Personal File System (PFS)</h3>
-            <p>
-              I developed a JavaFX application that used the ADT Tree as an
-              Abstract Data Type, following object-oriented principles and
-              incorporating software design patterns. The application simulated
-              the management of a file system, named Personal File System (PFS),
-              enabling basic operations such as creation, editing, copying,
-              deletion, and navigation between files and directories, with data
-              persistence.
-            </p>
-            <h4>Languages Used:</h4>
-            <ul>
-              <li>Java</li>
-              <li>JavaFX</li>
-            </ul>
-            <div class="work__links">
-              <a
-                href="https://github.com/rrmaduro/Personal-File-System-Management"
-                target="_blank"
-                class="btn"
-                >GitHub Repository</a
-              >
-            </div>
-          </div>
-
-          <div class="project__box">
-            <h3>Distribution Center Simulation</h3>
-            <p>
-              This project involved developing a simulation of a product
-              distribution center using Java and Object-Oriented Programming
-              (OOP) principles. The system modeled the receipt, packing,
-              transportation, storage, and distribution of products using
-              Automated Guided Vehicles (AGVs). In this distribution center,
-              products were received in a specific area of the warehouse,
-              packed, and then transported to storage locations. The
-              transportation was carried out by Automated Guided Vehicles
-              (AGVs). The distribution of products to sales locations followed a
-              similar process, where stored products were retrieved from storage
-              locations and delivered to a collection point within the
-              warehouse.
-            </p>
-            <h4>Languages Used:</h4>
-            <ul>
-              <li>Java</li>
-              <li>JavaFX</li>
-            </ul>
-            <div class="work__links">
-              <a
-                href="https://github.com/rrmaduro/Distribution-Center-Simulation"
-                target="_blank"
-                class="btn"
-                >GitHub Repository</a
-              >
-            </div>
-          </div>
-
-          <div class="project__box">
-            <h3>ETSTBike - Cycling Club Management System</h3>
-            <p>
-              The objective of this project was to enhance the existing Cycling
-              Club Management System by integrating a data persistence
-              mechanism. This was achieved by developing a Single Page
-              Application (SPA) that followed the Representational State
-              Transfer (REST) methodology and communicated with a MySQL database
-              using JSON serialization. To minimize modifications to the initial
-              project, the SPA was designed to interact seamlessly with the
-              existing system while ensuring robust data management.
-            </p>
-            <h4>Languages Used:</h4>
-            <ul>
-              <li>MySQL</li>
-              <li>JavaScript</li>
-              <li>HTML5</li>
-              <li>CSS</li>
-            </ul>
-            <div class="work__links">
-              <a
-                href="https://github.com/rrmaduro/ESTSBike"
-                target="_blank"
-                class="btn"
-                >GitHub Repository</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ***** Skills & Certifications ***** -->
-      <section class="skills" id="skills">
-        <div class="row">
-          <h2>Skills & Certifications</h2>
-        
-          <div class="skills__container">
-            <h3>Skills</h3>
-            <ul class="skills__list">
-              <li><strong>Programming Languages:</strong>Java, C, C#, Python, JavaScript, TypeScript, R</li>
-              <li><strong>Web Development:</strong> HTML, CSS, JavaScript, Vue.js, Node.js, Bootstrap, Vuex Store, Angular.js</li>
-              <li><strong>Data Science:</strong> SQL, MySQL, T-SQL, SQL Server</li>
-              <li><strong>Version Control:</strong> Git, GitHub</li>
-              <li><strong>Office Tools:</strong> Microsoft Office</li>
-            </ul>
-          </div>        
-          <div class="certifications__container">
-            <h3>Certifications</h3>
-            <ul class="certifications__list">
-              <li>
-                <strong>Cambridge English C1 Advanced (Score: 196)</strong> - This certification demonstrates a high level of English proficiency, including strong communication, comprehension, and writing skills in professional and academic contexts. This qualification affirms my ability to interact effectively in complex academic and professional settings worldwide.
-                <br><em>Field of study: Personal Skills and Development</em><br>
-                
-                <em>Location: Barreiro, Portugal | 2022  </em>| <a href="https://www.cambridgeenglish.org" target="_blank">More Information</a>   |  CAE Certificate: <a href="C1 Certificate.pdf" download class="link">See my certificate</a>
-              </li>
-              <br>
-              <li>
-                <strong>Upper Intermediate English Language Tuition Course</strong> - Harrow House International College, Swanage, United Kingdom (2018). This course enriched my English proficiency through intensive classes focusing on oral and written communication, as well as an in-depth understanding of grammar and vocabulary.
-                <br><em>Field of study: Personal Skills and Development</em><br>
-                <em>Location: Swanage, United Kingdom | 2018</em> | Certificate of Studies: <a href="Harrow House Certificate.pdf" download class="link">See my certificate</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      
-      <!-- ***** Contact ***** -->
-      <section class="contact" id="contact">
-        <div class="row">
-          <h2>Contact</h2>
-          <div class="contact__wrapper">
-            <div class="contact__card">
-              <div class="contact__header">
-                <h3>Get In Touch</h3>
-                <p class="contact__subtitle">Feel free to reach out through any of these channels</p>
-              </div>
-              
-              <div class="contact__items">
-                <div class="contact__item">
-                  <div class="contact__icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact__icon-svg">
-                      <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                    </svg>
-                  </div>
-                  <div class="contact__content">
-                    <h4>Email</h4>
-                    <a href="mailto:rodrigomaduro.pro@gmail.com" class="contact__link">rodrigomaduro.pro@gmail.com</a>
-                  </div>
-                </div>
-                
-                <div class="contact__item">
-                  <div class="contact__icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact__icon-svg">
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                      <rect width="4" height="12" x="2" y="9"></rect>
-                      <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                  </div>
-                  <div class="contact__content">
-                    <h4>LinkedIn</h4>
-                    <a href="https://www.linkedin.com/in/rmaduro/" target="_blank" class="contact__link">linkedin.com/in/rmaduro</a>
-                  </div>
-                </div>
-                
-                <div class="contact__item">
-                  <div class="contact__icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact__icon-svg">
-                      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-                      <path d="M9 18c-4.51 2-5-2-7-2"></path>
-                    </svg>
-                  </div>
-                  <div class="contact__content">
-                    <h4>GitHub</h4>
-                    <a href="https://github.com/rrmaduro" target="_blank" class="contact__link">github.com/rrmaduro</a>
-                  </div>
-                </div>
-                
-                <div class="contact__item">
-                  <div class="contact__icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact__icon-svg">
-                      <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
-                      <polyline points="14 2 14 8 20 8"></polyline>
-                    </svg>
-                  </div>
-                  <div class="contact__content">
-                    <h4>Resume</h4>
-                    <a href="CV English Rodrigo Maduro.pdf" download class="contact__link">Download my CV</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="row">
-        <p>&copy; 2025 Rodrigo Maduro - MSc Application Portfolio</p>
       </div>
-    </footer>
+    </div>
+  </div>
+</section>
 
-    <!-- Back to top button -->
-    <a href="#top" class="back-to-top">
-      <img
-        src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/icons/arrow-up.svg"
-        alt="Back to top"
-        class="back-to-top__image"
-      />
-    </a>
+<hr class="divider"/>
 
-    <script>
-      // Show back-to-top button when scrolling down
-      window.addEventListener("scroll", function () {
-        const backToTop = document.querySelector(".back-to-top");
-        if (window.pageYOffset > 300) {
-          backToTop.style.visibility = "visible";
-          backToTop.style.opacity = "1";
-        } else {
-          backToTop.style.visibility = "hidden";
-          backToTop.style.opacity = "0";
-        }
-      });
+<!-- Experience -->
+<section id="experience">
+  <div class="wrap">
+    <div class="section-label">work history</div>
+    <h2 class="section-title">Experi<span>ence</span></h2>
 
-      // Add smooth scrolling to all links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-        });
-      });
-    </script>
-  </body>
+    <div class="exp-list">
+
+      <div class="exp-card fade-in">
+        <div class="exp-header">
+          <div>
+            <div class="exp-badge">Current</div>
+            <div class="exp-role">Junior Consultant — IT Discovery &amp; APM</div>
+            <div class="exp-co">Timestamp · Lisbon, Portugal</div>
+          </div>
+          <div class="exp-meta">Sep 2025 — Present<br>ITSM / ITOM</div>
+        </div>
+        <ul class="exp-desc" style="padding-left:1.8rem;">
+          <li>Infrastructure visibility and service mapping using <strong style="color:var(--white)">OpenText UCMDB</strong> and <strong style="color:var(--white)">Universal Discovery</strong></li>
+          <li>Application performance monitoring and bottleneck identification with <strong style="color:var(--white)">Cisco AppDynamics</strong></li>
+          <li>Workflow automation and service integration via <strong style="color:var(--white)">OpenText SMAX</strong> and <strong style="color:var(--white)">Operations Orchestration</strong></li>
+          <li>Dependency modelling — mapping relationships between applications, services and infrastructure components</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="tag">OpenText UCMDB</span>
+          <span class="tag">Universal Discovery</span>
+          <span class="tag">Cisco AppDynamics</span>
+          <span class="tag">OpenText SMAX</span>
+          <span class="tag">Operations Orchestration</span>
+          <span class="tag">ITOM</span>
+          <span class="tag">ITSM</span>
+          <span class="tag">ETL</span>
+        </div>
+      </div>
+
+      <div class="exp-card green-l fade-in">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Frontend Developer Intern</div>
+            <div class="exp-co">Petrotec · Seixal, Portugal</div>
+          </div>
+          <div class="exp-meta">Jul 2024<br>Manufacturing</div>
+        </div>
+        <ul class="exp-desc" style="padding-left:1.8rem;">
+          <li>Built responsive interfaces for industrial automation systems using <strong style="color:var(--white)">Vue.js</strong> and Bootstrap Vue</li>
+          <li>Implemented centralised state management with <strong style="color:var(--white)">Vuex Store</strong></li>
+          <li>Developed an OTP authentication system using <strong style="color:var(--white)">Node.js</strong></li>
+        </ul>
+        <div class="exp-tags">
+          <span class="tag g">Vue.js</span>
+          <span class="tag g">Vuex</span>
+          <span class="tag g">Bootstrap Vue</span>
+          <span class="tag g">Node.js</span>
+          <span class="tag g">REST APIs</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- Projects -->
+<section id="projects">
+  <div class="wrap">
+    <div class="section-label">academic work</div>
+    <h2 class="section-title">Pro<span>jects</span></h2>
+
+    <div class="proj-grid">
+
+      <div class="proj-card fade-in">
+        <div class="proj-lang">SQL · MySQL</div>
+        <div class="proj-title">Database Project</div>
+        <p class="proj-desc">Relational database with stored procedures, referential integrity mechanisms and a data-level API for secure application logic.</p>
+        <a href="https://github.com/rrmaduro/DataBase-Project" target="_blank" class="proj-link">GitHub →</a>
+      </div>
+
+      <div class="proj-card fade-in">
+        <div class="proj-lang">SQL · T-SQL · MongoDB</div>
+        <div class="proj-title">AdventureWorks ERP</div>
+        <p class="proj-desc">ERP migration from Excel to SQL Server — full data modelling, migration scripts and a MongoDB complement layer.</p>
+        <a href="https://github.com/rrmaduro/DataBase-Complements-Project" target="_blank" class="proj-link">GitHub →</a>
+      </div>
+
+      <div class="proj-card fade-in">
+        <div class="proj-lang">Java · JavaFX</div>
+        <div class="proj-title">Personal File System</div>
+        <p class="proj-desc">File system simulator using ADT Tree. Full CRUD on files and directories with data persistence and OOP design patterns.</p>
+        <a href="https://github.com/rrmaduro/Personal-File-System-Management" target="_blank" class="proj-link">GitHub →</a>
+      </div>
+
+      <div class="proj-card fade-in">
+        <div class="proj-lang">Java · JavaFX</div>
+        <div class="proj-title">Distribution Centre Simulation</div>
+        <p class="proj-desc">OOP simulation of a logistics centre with Automated Guided Vehicles managing receipt, storage and delivery flows.</p>
+        <a href="https://github.com/rrmaduro/Distribution-Center-Simulation" target="_blank" class="proj-link">GitHub →</a>
+      </div>
+
+      <div class="proj-card fade-in">
+        <div class="proj-lang">JavaScript · HTML · MySQL</div>
+        <div class="proj-title">ETSTBike — Club Management SPA</div>
+        <p class="proj-desc">REST-based single-page application with JSON serialisation and MySQL persistence, integrated with an existing legacy system.</p>
+        <a href="https://github.com/rrmaduro/ESTSBike" target="_blank" class="proj-link">GitHub →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- Skills -->
+<section id="skills">
+  <div class="wrap">
+    <div class="section-label">technical profile</div>
+    <h2 class="section-title">Skill<span>set</span></h2>
+
+    <div class="skills-grid">
+
+      <div class="fade-in">
+        <div class="skill-group-title">IT Operations &amp; Observability</div>
+        <div class="skill-items">
+          <div class="skill-item">
+            <span class="skill-name">UCMDB / UD</span>
+            <div class="skill-bar"><div class="skill-fill" data-w="60"></div></div>
+            <span class="skill-pct">60%</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">AppDynamics</span>
+            <div class="skill-bar"><div class="skill-fill" data-w="55"></div></div>
+            <span class="skill-pct">55%</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">OpenText SMAX</span>
+            <div class="skill-bar"><div class="skill-fill" data-w="50"></div></div>
+            <span class="skill-pct">50%</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Ops Orchestration</span>
+            <div class="skill-bar"><div class="skill-fill" data-w="40"></div></div>
+            <span class="skill-pct">40%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-in">
+        <div class="skill-group-title">Development</div>
+        <div class="skill-items">
+          <div class="skill-item">
+            <span class="skill-name">JavaScript / TS</span>
+            <div class="skill-bar"><div class="skill-fill" data-w="70"></div></div>
+            <span class="skill-pct">70%</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Vue.js</span>
+            <div class="skill-bar"><div class="skill-fill" data-w="65"></div></div>
+            <span class="skill-pct">65%</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Java</span>
+            <div class="skill-bar"><div class="skill-fill" data-w="68"></div></div>
+            <span class="skill-pct">68%</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Python</span>
+            <div class="skill-bar"><div class="skill-fill" data-w="50"></div></div>
+            <span class="skill-pct">50%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-in">
+        <div class="skill-group-title">Databases &amp; Tools</div>
+        <div class="skill-items">
+          <div class="skill-item">
+            <span class="skill-name">MySQL / SQL Svr</span>
+            <div class="skill-bar"><div class="skill-fill" data-w="70"></div></div>
+            <span class="skill-pct">70%</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">MongoDB</span>
+            <div class="skill-bar"><div class="skill-fill" data-w="55"></div></div>
+            <span class="skill-pct">55%</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Git / GitHub</span>
+            <div class="skill-bar"><div class="skill-fill" data-w="75"></div></div>
+            <span class="skill-pct">75%</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Jira / Confluence</span>
+            <div class="skill-bar"><div class="skill-fill" data-w="65"></div></div>
+            <span class="skill-pct">65%</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="wrap">
+    <div class="section-label">get in touch</div>
+    <h2 class="section-title">Con<span>tact</span></h2>
+
+    <div class="contact-grid">
+      <div class="contact-text fade-in">
+        <p>Junior IT Consultant working across ITSM, ITOM and APM in enterprise environments — and finishing a Computer Science degree at IPS.</p>
+        <p>Interested in conversations about IT operations, observability and where the industry is heading. Feel free to reach out.</p>
+      </div>
+
+      <div class="contact-links fade-in">
+        <a href="mailto:rodrigomaduro.pro@gmail.com" class="contact-link">
+          <span class="cl-icon">✉</span>
+          <div><span class="cl-label">Email</span>rodrigomaduro.pro@gmail.com</div>
+        </a>
+        <a href="https://www.linkedin.com/in/rmaduro/" target="_blank" class="contact-link">
+          <span class="cl-icon">in</span>
+          <div><span class="cl-label">LinkedIn</span>linkedin.com/in/rmaduro</div>
+        </a>
+        <a href="https://github.com/rrmaduro" target="_blank" class="contact-link">
+          <span class="cl-icon">gh</span>
+          <div><span class="cl-label">GitHub</span>github.com/rrmaduro</div>
+        </a>
+        <a href="CV_English_Rodrigo_Maduro.pdf" download class="contact-link">
+          <span class="cl-icon">↓</span>
+          <div><span class="cl-label">Curriculum Vitae</span>Download PDF</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">© 2025 <span>Rodrigo Maduro</span> — Lisbon, Portugal</div>
+    <div class="footer-copy" style="font-size:1.1rem; color:var(--muted);">B.Sc. CS&amp;E · Junior IT Consultant</div>
+  </div>
+</footer>
+
+<script>
+  // particles
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  let W, H;
+  const pts = Array.from({length:55}, () => ({
+    x: Math.random()*9999, y: Math.random()*9999,
+    vx:(Math.random()-.5)*.3, vy:(Math.random()-.5)*.3,
+    r: Math.random()*1.4+.4, a: Math.random()*.35+.08
+  }));
+  function resize() { W=canvas.width=innerWidth; H=canvas.height=innerHeight; }
+  resize(); window.addEventListener('resize', resize);
+  (function draw() {
+    ctx.clearRect(0,0,W,H);
+    pts.forEach(p => {
+      p.x+=p.vx; p.y+=p.vy;
+      if(p.x<0)p.x=W; if(p.x>W)p.x=0;
+      if(p.y<0)p.y=H; if(p.y>H)p.y=0;
+      ctx.beginPath();
+      ctx.arc(p.x%W,p.y%H,p.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(0,212,255,${p.a})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  })();
+
+  // fade in + skill bars
+  document.querySelectorAll('.skill-fill').forEach(b => b.style.width='0%');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(!e.isIntersecting) return;
+      e.target.classList.add('visible');
+      e.target.querySelectorAll('.skill-fill').forEach(b => b.style.width=b.dataset.w+'%');
+    });
+  }, {threshold:.1});
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+  // active nav
+  const secs = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur='';
+    secs.forEach(s => { if(scrollY >= s.offsetTop-130) cur=s.id; });
+    links.forEach(a => { a.style.color = a.getAttribute('href')==='#'+cur ? 'var(--cyan)' : ''; });
+  });
+</script>
+</body>
 </html>
