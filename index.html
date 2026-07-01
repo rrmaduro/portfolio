@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rodrigo Maduro — Junior IT Consultant</title>
-  <meta name="description" content="Junior IT Consultant at Timestamp — ITSM, ITOM, APM and observability."/>
+  <title>Rodrigo Maduro · Junior IT Consultant</title>
+  <meta name="description" content="Junior IT Consultant at Timestamp: ITSM, ITOM, APM and observability."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet"/>
   <style>
-    :root{--bg:#020409;--bg2:#080d18;--bg3:#0c1220;--border:#1a2540;--border2:#243050;--cyan:#00d4ff;--green:#00ff9d;--amber:#ffb800;--red:#ff4060;--white:#e8f0ff;--muted:#4a5878;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif;}
+    :root{--bg:#020409;--bg2:#080d18;--bg3:#0c1220;--border:#1a2540;--border2:#243050;--cyan:#00d4ff;--green:#00ff9d;--amber:#ffb800;--red:#ff4060;--white:#e8f0ff;--muted:#8a9bc4;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif;}
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;font-size:62.5%;}
-    body{font-family:var(--mono);font-size:1.4rem;background:var(--bg);color:var(--white);overflow-x:hidden;cursor:crosshair;}
+    body{font-family:var(--mono);font-size:1.4rem;background:var(--bg);color:var(--white);overflow-x:hidden;}
     body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.06) 2px,rgba(0,0,0,.06) 4px);pointer-events:none;z-index:9999;}
     #grid-bg{position:fixed;inset:0;z-index:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:40px 40px;opacity:.28;will-change:background-position;}
     #particles{position:fixed;inset:0;z-index:1;pointer-events:none;}
@@ -138,30 +138,30 @@
     .edu-link{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.5rem;font-size:1.1rem;color:var(--cyan);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;transition:gap .2s;}
     .edu-link:hover{gap:.9rem;}
 
-    /* JOURNEY MAP */
-    .map-shell{border-radius:8px;overflow:hidden;border:1px solid var(--border2);position:relative;background:#1a2333;}
-    .map-svg{width:100%;display:block;}
-    .map-ui{position:absolute;top:12px;left:12px;right:12px;display:flex;justify-content:space-between;align-items:flex-start;pointer-events:none;}
-    .map-bar{background:rgba(2,4,9,.92);border:0.5px solid rgba(255,255,255,.12);border-radius:8px;padding:8px 14px;font-size:1.2rem;color:#a0b4cc;display:flex;align-items:center;gap:8px;}
-    .map-bar .live{width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 6px #4ade80;}
-    .map-info{position:absolute;bottom:60px;left:12px;width:22rem;background:rgba(2,4,9,.95);border:0.5px solid rgba(255,255,255,.12);border-radius:10px;padding:1.4rem 1.6rem;pointer-events:none;opacity:0;transform:translateY(6px);transition:opacity .2s ease,transform .2s ease;}
-    .map-info.show{opacity:1;transform:none;}
-    .mi-year{font-size:1rem;color:#4ade80;letter-spacing:.14em;margin-bottom:.4rem;}
-    .mi-title{font-size:1.3rem;color:#e2eaf4;font-weight:500;margin-bottom:.5rem;line-height:1.3;}
-    .mi-desc{font-size:1.1rem;color:#6b84a0;line-height:1.6;margin-bottom:.8rem;}
-    .mi-tags{display:flex;flex-wrap:wrap;gap:.4rem;}
-    .mi-tag{font-size:1rem;padding:.2rem .7rem;border-radius:4px;border:.5px solid;}
-    .map-legend{position:absolute;bottom:60px;right:12px;background:rgba(2,4,9,.92);border:.5px solid rgba(255,255,255,.1);border-radius:8px;padding:1rem 1.4rem;font-size:1.1rem;color:#6b84a0;}
-    .leg-row{display:flex;align-items:center;gap:.7rem;margin-bottom:.5rem;}
-    .leg-row:last-child{margin-bottom:0;}
-    .leg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
-    .map-scrubber{position:absolute;bottom:0;left:0;right:0;background:rgba(2,4,9,.95);border-top:.5px solid rgba(255,255,255,.1);padding:1rem 2rem;display:flex;align-items:center;gap:1.6rem;}
-    .scrub-year{font-size:1.3rem;color:var(--cyan);font-weight:500;width:4rem;flex-shrink:0;font-family:var(--mono);}
-    .scrub-input{flex:1;accent-color:var(--cyan);}
-    .scrub-label{font-size:1rem;color:var(--muted);width:8rem;text-align:right;flex-shrink:0;}
-    @keyframes ripple-pin{0%{r:14;opacity:.6}100%{r:26;opacity:0}}
-    @keyframes dash-go{to{stroke-dashoffset:-24}}
-    @keyframes pin-pulse{0%,100%{opacity:1}50%{opacity:.5}}
+    /* JOURNEY TIMELINE */
+    .tl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2.4rem;position:relative;padding-top:.5rem;}
+    .tl-grid::before{content:'';position:absolute;top:1.6rem;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,#f59e0b,#818cf8,#4ade80,#38bdf8);opacity:.4;}
+    .tl-node{position:relative;text-align:center;}
+    .tl-dot{width:14px;height:14px;border-radius:50%;background:var(--tlc);margin:0 auto 2rem;position:relative;z-index:1;box-shadow:0 0 0 5px var(--bg),0 0 14px var(--tlc);}
+    .tl-dot-current{animation:pulse 2s ease-in-out infinite;}
+    .tl-card{background:var(--bg2);border:1px solid var(--border);border-top:2px solid var(--tlc);padding:2.2rem 2rem;text-align:left;height:100%;transition:box-shadow .3s ease,transform .3s ease;}
+    .tl-card:hover{transform:translateY(-3px);box-shadow:0 0 30px rgba(0,212,255,.08);}
+    .tl-year{font-family:var(--sans);font-size:1.3rem;font-weight:700;color:var(--tlc);letter-spacing:.04em;margin-bottom:.8rem;display:flex;align-items:center;gap:.8rem;}
+    .tl-current{font-family:var(--mono);font-size:.95rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--tlc);border:1px solid var(--tlc);padding:.15rem .7rem;}
+    .tl-title{font-family:var(--sans);font-weight:700;font-size:1.55rem;line-height:1.3;margin-bottom:.5rem;}
+    .tl-loc{font-size:1.1rem;color:var(--muted);letter-spacing:.02em;margin-bottom:1.4rem;}
+    .tl-desc{font-size:1.15rem;color:rgba(232,240,255,.62);line-height:1.75;margin-bottom:1.6rem;}
+    .tl-tags{display:flex;flex-wrap:wrap;gap:.7rem;}
+    .tl-tag{font-size:1rem;padding:.3rem 1rem;border:1px solid var(--tlc);color:var(--tlc);letter-spacing:.03em;}
+    @media(max-width:900px){
+      .tl-grid{grid-template-columns:1fr;gap:0;}
+      .tl-grid::before{display:none;}
+      .tl-node{text-align:left;padding-left:2.6rem;padding-bottom:2.8rem;}
+      .tl-node::before{content:'';position:absolute;left:.6rem;top:.3rem;bottom:0;width:2px;background:var(--border2);}
+      .tl-node:last-child{padding-bottom:0;}
+      .tl-node:last-child::before{display:none;}
+      .tl-dot{position:absolute;left:0;top:.3rem;margin:0;}
+    }
 
     /* PROJECTS */
     .proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(30rem,1fr));gap:2rem;}
@@ -248,6 +248,7 @@
 
     @media(max-width:900px){.hero-grid,.contact-grid,.edu-grid,.radar-wrap{grid-template-columns:1fr;gap:3rem;}.stats-inner{grid-template-columns:repeat(2,1fr);}.radar-svg-wrap{flex:0 0 100%;}}
     @media(max-width:600px){.nav-links{display:none;}h1{font-size:4rem;}.stats-inner{grid-template-columns:1fr 1fr;}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important;}}
     ::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--border2);}
     ::selection{background:rgba(0,212,255,.2);color:var(--cyan);}
   </style>
@@ -262,6 +263,7 @@
   <div class="boot-line" id="bl3"><span class="warn">[ .. ]</span> loading portfolio components...</div>
   <div class="boot-line" id="bl4"><span class="ok">[ OK ]</span> rm.dev v2.0 ready</div>
   <div id="boot-bar-wrap"><div id="boot-bar"></div></div>
+  <div class="boot-line show" style="opacity:.5;font-size:1.1rem;margin-top:.4rem;">click or press any key to skip</div>
 </div>
 
 <!-- COMMAND PALETTE -->
@@ -278,8 +280,8 @@
   </div>
 </div>
 
-<div id="grid-bg"></div>
-<canvas id="particles"></canvas>
+<div id="grid-bg" aria-hidden="true"></div>
+<canvas id="particles" aria-hidden="true"></canvas>
 
 <!-- NAV -->
 <nav>
@@ -302,7 +304,7 @@
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="hero-tag">sys/init — portfolio v2.0</div>
+        <div class="hero-tag">sys/init · portfolio v2.0</div>
         <h1>Rodrigo<br><span class="accent">Maduro</span></h1>
         <p class="hero-sub" id="typewriter"></p>
         <div class="btn-row">
@@ -321,7 +323,7 @@
           <div class="t-line"><span class="t-key">name</span>:        <span class="t-val">Rodrigo Maduro</span></div>
           <div class="t-line"><span class="t-key">role</span>:        <span class="t-val">Junior IT Consultant</span></div>
           <div class="t-line"><span class="t-key">company</span>:     <span class="t-val">Timestamp · Lisbon</span></div>
-          <div class="t-line"><span class="t-key">education</span>:   <span class="t-val">B.Sc. CS&amp;E — IPS (final yr)</span></div>
+          <div class="t-line"><span class="t-key">education</span>:   <span class="t-val">B.Sc. CS&amp;E · IPS (final yr)</span></div>
           <div class="t-line"><span class="t-key">stack</span>:</div>
           <div class="t-line">&nbsp; <span class="t-arr">-</span> <span class="t-val">OpenText UCMDB &amp; UD</span></div>
           <div class="t-line">&nbsp; <span class="t-arr">-</span> <span class="t-val">Cisco AppDynamics</span></div>
@@ -342,8 +344,8 @@
   <div class="stats-inner">
     <div class="stat fade-in"><span class="stat-num">5+</span><span class="stat-label">Enterprise platforms</span></div>
     <div class="stat fade-in"><span class="stat-num">2</span><span class="stat-label">Companies</span></div>
-    <div class="stat fade-in"><span class="stat-num">C1</span><span class="stat-label">English — Cambridge</span></div>
-    <div class="stat fade-in"><span class="stat-num">180</span><span class="stat-label">ECTS — CS&amp;E degree</span></div>
+    <div class="stat fade-in"><span class="stat-num">C1</span><span class="stat-label">English · Cambridge</span></div>
+    <div class="stat fade-in"><span class="stat-num">180</span><span class="stat-label">ECTS · CS&amp;E degree</span></div>
   </div>
 </div>
 <hr class="divider"/>
@@ -352,18 +354,18 @@
 <section id="experience">
   <div class="wrap">
     <div class="section-label">work history</div>
-    <div class="section-head"><h2 class="section-title">Experi<span>ence</span></h2><div class="section-num">01</div></div>
+    <div class="section-head"><h2 class="section-title">Experi<span>ence</span></h2><div class="section-num" aria-hidden="true">01</div></div>
     <div class="exp-list">
       <div class="exp-card fade-in">
         <div class="exp-header">
-          <div><div class="exp-badge">Current</div><div class="exp-role">Junior Consultant — IT Discovery &amp; APM</div><div class="exp-co">Timestamp · Lisbon, Portugal</div></div>
-          <div class="exp-meta">Sep 2025 — Present<br>ITSM / ITOM</div>
+          <div><div class="exp-badge">Current</div><div class="exp-role">Junior Consultant · IT Discovery &amp; APM</div><div class="exp-co">Timestamp · Lisbon, Portugal</div></div>
+          <div class="exp-meta">Sep 2025 to Present<br>ITSM / ITOM</div>
         </div>
         <ul class="exp-desc">
           <li>Infrastructure visibility and service mapping using <strong style="color:var(--white)">OpenText UCMDB</strong> and <strong style="color:var(--white)">Universal Discovery</strong></li>
           <li>Application performance monitoring and bottleneck identification with <strong style="color:var(--white)">Cisco AppDynamics</strong></li>
           <li>Workflow automation and service integration via <strong style="color:var(--white)">OpenText SMAX</strong> and <strong style="color:var(--white)">Operations Orchestration</strong></li>
-          <li>Dependency modelling — mapping relationships between applications, services and infrastructure</li>
+          <li>Dependency modelling: mapping relationships between applications, services and infrastructure</li>
         </ul>
         <div class="exp-tags"><span class="tag">OpenText UCMDB</span><span class="tag">Universal Discovery</span><span class="tag">Cisco AppDynamics</span><span class="tag">OpenText SMAX</span><span class="tag">Operations Orchestration</span><span class="tag">ITOM</span><span class="tag">ITSM</span><span class="tag">ETL</span></div>
       </div>
@@ -388,10 +390,10 @@
 <section id="education">
   <div class="wrap">
     <div class="section-label">academic background</div>
-    <div class="section-head"><h2 class="section-title">Educa<span>tion</span></h2><div class="section-num">02</div></div>
+    <div class="section-head"><h2 class="section-title">Educa<span>tion</span></h2><div class="section-num" aria-hidden="true">02</div></div>
     <div class="edu-grid">
       <div class="edu-card fade-in">
-        <div class="edu-year">2022 — Present</div>
+        <div class="edu-year">2022 to Present</div>
         <div class="edu-title">B.Sc. Computer Science &amp; Engineering</div>
         <div class="edu-inst">Instituto Politécnico de Setúbal · Portugal</div>
         <p class="edu-desc">Programming, database modelling and software design patterns. EQF Level 6 · 180 ECTS. Final year in progress.</p>
@@ -409,125 +411,57 @@
 </section>
 <hr class="divider"/>
 
-<!-- JOURNEY MAP -->
+<!-- JOURNEY -->
 <section id="journey">
   <div class="wrap">
-    <div class="section-label">percurso</div>
-    <div class="section-head"><h2 class="section-title">Journey <span>Map</span></h2><div class="section-num">03</div></div>
-    <div class="map-shell fade-in">
-      <svg class="map-svg" viewBox="0 0 680 400" id="mapSvg">
-        <defs>
-          <pattern id="mgrid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,0.035)" stroke-width="0.5"/>
-          </pattern>
-          <pattern id="mgrid2" width="8" height="8" patternUnits="userSpaceOnUse">
-            <path d="M8 0H0V8" fill="none" stroke="rgba(255,255,255,0.015)" stroke-width="0.5"/>
-          </pattern>
-          <clipPath id="mclip"><rect width="680" height="400" rx="8"/></clipPath>
-        </defs>
-        <g clip-path="url(#mclip)">
-          <rect width="680" height="400" fill="#1a2333"/>
-          <rect width="680" height="400" fill="url(#mgrid2)"/>
-          <rect width="680" height="400" fill="url(#mgrid)"/>
-          <rect x="0" y="170" width="680" height="70" fill="#1f2d42" opacity=".55"/>
-          <rect x="0" y="290" width="680" height="40" fill="#1f2d42" opacity=".4"/>
-          <rect x="55"  y="140" width="110" height="50" rx="4" fill="#243044" stroke="rgba(255,255,255,.04)" stroke-width="0.5"/>
-          <rect x="230" y="80"  width="90"  height="42" rx="4" fill="#243044" stroke="rgba(255,255,255,.04)" stroke-width="0.5"/>
-          <rect x="420" y="185" width="100" height="55" rx="4" fill="#243044" stroke="rgba(255,255,255,.04)" stroke-width="0.5"/>
-          <rect x="510" y="100" width="80"  height="48" rx="4" fill="#243044" stroke="rgba(255,255,255,.04)" stroke-width="0.5"/>
-          <rect x="75"  y="300" width="95"  height="50" rx="4" fill="#243044" stroke="rgba(255,255,255,.04)" stroke-width="0.5"/>
-          <rect x="330" y="298" width="120" height="55" rx="4" fill="#243044" stroke="rgba(255,255,255,.04)" stroke-width="0.5"/>
-          <text x="110" y="170" text-anchor="middle" fill="rgba(255,255,255,.06)" font-size="9" font-family="JetBrains Mono,monospace">SWANAGE</text>
-          <text x="275" y="107" text-anchor="middle" fill="rgba(255,255,255,.06)" font-size="9" font-family="JetBrains Mono,monospace">SETÚBAL</text>
-          <text x="470" y="218" text-anchor="middle" fill="rgba(255,255,255,.06)" font-size="9" font-family="JetBrains Mono,monospace">SEIXAL</text>
-          <text x="550" y="130" text-anchor="middle" fill="rgba(255,255,255,.06)" font-size="9" font-family="JetBrains Mono,monospace">LISBON</text>
-          <path d="M130 165 L260 125" fill="none" stroke="#2a3a52" stroke-width="6" stroke-linecap="round"/>
-          <path d="M260 125 L305 172" fill="none" stroke="#2a3a52" stroke-width="6" stroke-linecap="round"/>
-          <path d="M305 172 L470 212" fill="none" stroke="#2a3a52" stroke-width="6" stroke-linecap="round"/>
-          <path d="M470 212 L530 148" fill="none" stroke="#2a3a52" stroke-width="6" stroke-linecap="round"/>
+    <div class="section-label">how I got here</div>
+    <div class="section-head"><h2 class="section-title">Journey <span>So Far</span></h2><div class="section-num" aria-hidden="true">03</div></div>
+    <div class="tl-grid fade-in">
 
-          <!-- ROUTE — drawn progressively by JS -->
-          <path id="routeBg"
-            d="M 110 165 C 155 150, 215 135, 260 122 C 278 116, 285 130, 305 172 C 325 210, 380 218, 470 212 C 492 210, 508 185, 530 148"
-            fill="none" stroke="#1a56a0" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="8 5" opacity=".65"
-            style="animation:dash-go 1.2s linear infinite" stroke-dashoffset="0"/>
-          <path id="routeLine"
-            d="M 110 165 C 155 150, 215 135, 260 122 C 278 116, 285 130, 305 172 C 325 210, 380 218, 470 212 C 492 210, 508 185, 530 148"
-            fill="none" stroke="#3b82f6" stroke-width="1" stroke-linecap="round" opacity=".3"/>
-
-          <!-- PINS — shown/hidden by scrubber -->
-          <g id="pin0" opacity="0" style="cursor:pointer" onmouseenter="mapHover(0)" onmouseleave="mapOut()">
-            <circle cx="110" cy="165" r="22" fill="#f59e0b" opacity=".08"/>
-            <circle cx="110" cy="165" r="22" fill="none" stroke="#f59e0b" stroke-width="0.5" opacity=".3" style="animation:ripple-pin 2s ease-out infinite"/>
-            <circle cx="110" cy="165" r="9" fill="#1a2333"/>
-            <circle cx="110" cy="165" r="7" fill="#f59e0b"/>
-            <line x1="110" y1="150" x2="110" y2="138" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/>
-            <polygon points="110,128 117,140 103,140" fill="#f59e0b"/>
-            <text x="110" y="186" text-anchor="middle" fill="#f59e0b" font-size="9" font-family="JetBrains Mono,monospace">2018</text>
-            <text x="110" y="197" text-anchor="middle" fill="rgba(255,255,255,.3)" font-size="8" font-family="JetBrains Mono,monospace">Swanage, UK</text>
-          </g>
-
-          <g id="pin1" opacity="0" style="cursor:pointer" onmouseenter="mapHover(1)" onmouseleave="mapOut()">
-            <circle cx="260" cy="122" r="22" fill="#818cf8" opacity=".08"/>
-            <circle cx="260" cy="122" r="22" fill="none" stroke="#818cf8" stroke-width="0.5" opacity=".3" style="animation:ripple-pin 2s ease-out infinite .5s"/>
-            <circle cx="260" cy="122" r="9" fill="#1a2333"/>
-            <circle cx="260" cy="122" r="7" fill="#818cf8"/>
-            <line x1="260" y1="107" x2="260" y2="95" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round"/>
-            <polygon points="260,85 267,97 253,97" fill="#818cf8"/>
-            <text x="260" y="143" text-anchor="middle" fill="#818cf8" font-size="9" font-family="JetBrains Mono,monospace">2022</text>
-            <text x="260" y="154" text-anchor="middle" fill="rgba(255,255,255,.3)" font-size="8" font-family="JetBrains Mono,monospace">Setúbal, PT</text>
-          </g>
-
-          <g id="pin2" opacity="0" style="cursor:pointer" onmouseenter="mapHover(2)" onmouseleave="mapOut()">
-            <circle cx="470" cy="212" r="22" fill="#4ade80" opacity=".08"/>
-            <circle cx="470" cy="212" r="22" fill="none" stroke="#4ade80" stroke-width="0.5" opacity=".3" style="animation:ripple-pin 2s ease-out infinite 1s"/>
-            <circle cx="470" cy="212" r="9" fill="#1a2333"/>
-            <circle cx="470" cy="212" r="7" fill="#4ade80"/>
-            <line x1="470" y1="197" x2="470" y2="185" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round"/>
-            <polygon points="470,175 477,187 463,187" fill="#4ade80"/>
-            <text x="470" y="233" text-anchor="middle" fill="#4ade80" font-size="9" font-family="JetBrains Mono,monospace">Jul 2024</text>
-            <text x="470" y="244" text-anchor="middle" fill="rgba(255,255,255,.3)" font-size="8" font-family="JetBrains Mono,monospace">Seixal, PT</text>
-          </g>
-
-          <g id="pin3" opacity="0" style="cursor:pointer" onmouseenter="mapHover(3)" onmouseleave="mapOut()">
-            <circle cx="530" cy="148" r="26" fill="#38bdf8" opacity=".1"/>
-            <circle cx="530" cy="148" r="26" fill="none" stroke="#38bdf8" stroke-width="0.5" opacity=".4" style="animation:ripple-pin 2s ease-out infinite .3s"/>
-            <circle cx="530" cy="148" r="26" fill="none" stroke="#38bdf8" stroke-width="1" opacity=".15" style="animation:ripple-pin 2s ease-out infinite 1.3s"/>
-            <circle cx="530" cy="148" r="10" fill="#1a2333"/>
-            <circle cx="530" cy="148" r="8" fill="#38bdf8" style="animation:pin-pulse 2s ease-in-out infinite"/>
-            <line x1="530" y1="132" x2="530" y2="118" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
-            <polygon points="530,107 538,120 522,120" fill="#38bdf8"/>
-            <text x="530" y="170" text-anchor="middle" fill="#38bdf8" font-size="9" font-family="JetBrains Mono,monospace">Sep 2025</text>
-            <text x="530" y="181" text-anchor="middle" fill="rgba(255,255,255,.35)" font-size="8" font-family="JetBrains Mono,monospace">Lisbon, PT</text>
-            <text x="530" y="192" text-anchor="middle" fill="#38bdf8" font-size="8" font-family="JetBrains Mono,monospace" opacity=".7">you are here</text>
-          </g>
-
-          <text x="16" y="394" fill="rgba(255,255,255,.1)" font-size="9" font-family="JetBrains Mono,monospace">© rm.dev maps · not for navigation</text>
-        </g>
-      </svg>
-
-      <!-- MAP UI overlays -->
-      <div class="map-ui">
-        <div class="map-bar"><div class="live"></div><span>rodrigo maduro · percurso</span></div>
+      <div class="tl-node" style="--tlc:#f59e0b">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-year">2018</div>
+          <h3 class="tl-title">Harrow House International College</h3>
+          <div class="tl-loc">Swanage, United Kingdom</div>
+          <p class="tl-desc">Upper intermediate English immersion programme. Laid the groundwork for the C1 Cambridge certification two years later.</p>
+          <div class="tl-tags"><span class="tl-tag">English</span></div>
+        </div>
       </div>
-      <div class="map-info" id="mapInfo">
-        <div class="mi-year" id="miYear"></div>
-        <div class="mi-title" id="miTitle"></div>
-        <div class="mi-desc" id="miDesc"></div>
-        <div class="mi-tags" id="miTags"></div>
+
+      <div class="tl-node" style="--tlc:#818cf8">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-year">2022</div>
+          <h3 class="tl-title">B.Sc. Computer Science &amp; Engineering</h3>
+          <div class="tl-loc">Instituto Politécnico de Setúbal, PT</div>
+          <p class="tl-desc">180 ECTS. Programming, databases and software engineering fundamentals. Final year currently in progress.</p>
+          <div class="tl-tags"><span class="tl-tag">Academia</span><span class="tl-tag">Ongoing</span></div>
+        </div>
       </div>
-      <div class="map-legend">
-        <div class="leg-row"><div class="leg-dot" style="background:#f59e0b"></div><span style="color:#f59e0b">Harrow House</span></div>
-        <div class="leg-row"><div class="leg-dot" style="background:#818cf8"></div><span style="color:#818cf8">IPS degree</span></div>
-        <div class="leg-row"><div class="leg-dot" style="background:#4ade80"></div><span style="color:#4ade80">Petrotec</span></div>
-        <div class="leg-row"><div class="leg-dot" style="background:#38bdf8;box-shadow:0 0 4px #38bdf8"></div><span style="color:#38bdf8">Timestamp (current)</span></div>
+
+      <div class="tl-node" style="--tlc:#4ade80">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-year">Jul 2024</div>
+          <h3 class="tl-title">Frontend Developer Intern, Petrotec</h3>
+          <div class="tl-loc">Seixal, Portugal</div>
+          <p class="tl-desc">Summer internship in the industrial automation sector. Built interfaces with Vue.js and Vuex, and an OTP login flow with Node.js.</p>
+          <div class="tl-tags"><span class="tl-tag">Vue.js</span><span class="tl-tag">Node.js</span></div>
+        </div>
       </div>
-      <!-- SCRUBBER -->
-      <div class="map-scrubber">
-        <span class="scrub-year" id="scrubYear">2018</span>
-        <input type="range" class="scrub-input" id="scrubber" min="0" max="100" value="0" step="1"/>
-        <span class="scrub-label">drag to travel</span>
+
+      <div class="tl-node" style="--tlc:#38bdf8">
+        <div class="tl-dot tl-dot-current"></div>
+        <div class="tl-card">
+          <div class="tl-year">Sep 2025 <span class="tl-current">Current</span></div>
+          <h3 class="tl-title">Junior IT Consultant, Timestamp</h3>
+          <div class="tl-loc">Lisbon, Portugal</div>
+          <p class="tl-desc">Enterprise ITSM and ITOM work with UCMDB, Universal Discovery, AppDynamics, SMAX and Operations Orchestration.</p>
+          <div class="tl-tags"><span class="tl-tag">ITSM</span><span class="tl-tag">APM</span></div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -537,18 +471,18 @@
 <section id="skills">
   <div class="wrap">
     <div class="section-label">technical profile</div>
-    <div class="section-head"><h2 class="section-title">Skills <span>Radar</span></h2><div class="section-num">04</div></div>
+    <div class="section-head"><h2 class="section-title">Skills <span>Radar</span></h2><div class="section-num" aria-hidden="true">04</div></div>
     <div class="radar-wrap fade-in">
       <div class="radar-svg-wrap">
         <svg viewBox="0 0 380 360" width="100%" id="radarSvg" style="overflow:visible"></svg>
       </div>
       <div class="radar-legend">
         <div class="radar-item"><div class="radar-item-head"><span class="radar-item-name">ITSM / ITOM</span><span class="radar-item-badge badge-daily">daily use</span></div><p class="radar-desc">Service management, incident handling and IT operations via UCMDB, SMAX and ServiceNow concepts.</p></div>
-        <div class="radar-item"><div class="radar-item-head"><span class="radar-item-name">APM</span><span class="radar-item-badge badge-daily">daily use</span></div><p class="radar-desc">Application performance monitoring with Cisco AppDynamics — dashboards, alerts, baseline analysis.</p></div>
+        <div class="radar-item"><div class="radar-item-head"><span class="radar-item-name">APM</span><span class="radar-item-badge badge-daily">daily use</span></div><p class="radar-desc">Application performance monitoring with Cisco AppDynamics: dashboards, alerts, baseline analysis.</p></div>
         <div class="radar-item"><div class="radar-item-head"><span class="radar-item-name">Discovery</span><span class="radar-item-badge badge-daily">daily use</span></div><p class="radar-desc">Infrastructure discovery and CMDB population using OpenText Universal Discovery and UCMDB.</p></div>
-        <div class="radar-item"><div class="radar-item-head"><span class="radar-item-name">Development</span><span class="radar-item-badge badge-working">working knowledge</span></div><p class="radar-desc">JavaScript, TypeScript, Vue.js, Java, Python — academic and professional exposure.</p></div>
-        <div class="radar-item"><div class="radar-item-head"><span class="radar-item-name">Databases</span><span class="radar-item-badge badge-working">working knowledge</span></div><p class="radar-desc">MySQL, SQL Server, MongoDB — data modelling, queries and schema design from academic projects.</p></div>
-        <div class="radar-item"><div class="radar-item-head"><span class="radar-item-name">Tooling</span><span class="radar-item-badge badge-working">working knowledge</span></div><p class="radar-desc">Git, Jira, Confluence, Postman — standard DevOps and consulting toolchain.</p></div>
+        <div class="radar-item"><div class="radar-item-head"><span class="radar-item-name">Development</span><span class="radar-item-badge badge-working">working knowledge</span></div><p class="radar-desc">JavaScript, TypeScript, Vue.js, Java and Python, from academic and professional exposure.</p></div>
+        <div class="radar-item"><div class="radar-item-head"><span class="radar-item-name">Databases</span><span class="radar-item-badge badge-working">working knowledge</span></div><p class="radar-desc">MySQL, SQL Server and MongoDB: data modelling, queries and schema design from academic projects.</p></div>
+        <div class="radar-item"><div class="radar-item-head"><span class="radar-item-name">Tooling</span><span class="radar-item-badge badge-working">working knowledge</span></div><p class="radar-desc">Git, Jira, Confluence and Postman: the standard DevOps and consulting toolchain.</p></div>
       </div>
     </div>
   </div>
@@ -559,7 +493,7 @@
 <section id="heatmap">
   <div class="wrap">
     <div class="section-label">daily activity</div>
-    <div class="section-head"><h2 class="section-title">Work<span>load</span></h2><div class="section-num">05</div></div>
+    <div class="section-head"><h2 class="section-title">Work<span>load</span></h2><div class="section-num" aria-hidden="true">05</div></div>
     <p style="font-size:1.3rem;color:var(--muted);margin-bottom:3rem;line-height:1.8;">A snapshot of how frequently I interact with each tool or concept in a typical working week. Darker = more frequent.</p>
     <div style="position:relative" class="fade-in">
       <div id="hmWrap"></div>
@@ -573,13 +507,13 @@
 <section id="projects">
   <div class="wrap">
     <div class="section-label">academic work</div>
-    <div class="section-head"><h2 class="section-title">Pro<span>jects</span></h2><div class="section-num">06</div></div>
+    <div class="section-head"><h2 class="section-title">Pro<span>jects</span></h2><div class="section-num" aria-hidden="true">06</div></div>
     <div class="proj-grid">
-      <div class="proj-card c1 fade-in"><div class="proj-lang-row"><div class="lang-dot dot-sql"></div><span class="proj-lang">SQL · MySQL</span></div><div class="proj-title">Database Project</div><p class="proj-desc">Relational database with stored procedures, referential integrity and a data-level API.</p><a href="https://github.com/rrmaduro/DataBase-Project" target="_blank" class="proj-link">GitHub →</a></div>
-      <div class="proj-card c2 fade-in"><div class="proj-lang-row"><div class="lang-dot dot-sql"></div><span class="proj-lang">SQL · T-SQL · MongoDB</span></div><div class="proj-title">AdventureWorks ERP</div><p class="proj-desc">ERP migration from Excel to SQL Server with full data modelling and MongoDB complement.</p><a href="https://github.com/rrmaduro/DataBase-Complements-Project" target="_blank" class="proj-link">GitHub →</a></div>
-      <div class="proj-card c3 fade-in"><div class="proj-lang-row"><div class="lang-dot dot-java"></div><span class="proj-lang">Java · JavaFX</span></div><div class="proj-title">Personal File System</div><p class="proj-desc">File system simulator using ADT Tree with full CRUD and data persistence.</p><a href="https://github.com/rrmaduro/Personal-File-System-Management" target="_blank" class="proj-link">GitHub →</a></div>
-      <div class="proj-card c4 fade-in"><div class="proj-lang-row"><div class="lang-dot dot-java"></div><span class="proj-lang">Java · JavaFX</span></div><div class="proj-title">Distribution Centre Sim</div><p class="proj-desc">OOP simulation of a logistics centre with AGVs managing full delivery flow.</p><a href="https://github.com/rrmaduro/Distribution-Center-Simulation" target="_blank" class="proj-link">GitHub →</a></div>
-      <div class="proj-card c5 fade-in"><div class="proj-lang-row"><div class="lang-dot dot-js"></div><span class="proj-lang">JavaScript · HTML · MySQL</span></div><div class="proj-title">ETSTBike SPA</div><p class="proj-desc">REST-based single-page app with JSON serialisation integrated into a legacy system.</p><a href="https://github.com/rrmaduro/ESTSBike" target="_blank" class="proj-link">GitHub →</a></div>
+      <div class="proj-card c1 fade-in"><div class="proj-lang-row"><div class="lang-dot dot-sql"></div><span class="proj-lang">SQL · MySQL</span></div><div class="proj-title">Database Project</div><p class="proj-desc">Relational database with stored procedures, referential integrity and a data-level API.</p><a href="https://github.com/rrmaduro/DataBase-Project" target="_blank" rel="noopener" class="proj-link">GitHub →</a></div>
+      <div class="proj-card c2 fade-in"><div class="proj-lang-row"><div class="lang-dot dot-sql"></div><span class="proj-lang">SQL · T-SQL · MongoDB</span></div><div class="proj-title">AdventureWorks ERP</div><p class="proj-desc">ERP migration from Excel to SQL Server with full data modelling and MongoDB complement.</p><a href="https://github.com/rrmaduro/DataBase-Complements-Project" target="_blank" rel="noopener" class="proj-link">GitHub →</a></div>
+      <div class="proj-card c3 fade-in"><div class="proj-lang-row"><div class="lang-dot dot-java"></div><span class="proj-lang">Java · JavaFX</span></div><div class="proj-title">Personal File System</div><p class="proj-desc">File system simulator using ADT Tree with full CRUD and data persistence.</p><a href="https://github.com/rrmaduro/Personal-File-System-Management" target="_blank" rel="noopener" class="proj-link">GitHub →</a></div>
+      <div class="proj-card c4 fade-in"><div class="proj-lang-row"><div class="lang-dot dot-java"></div><span class="proj-lang">Java · JavaFX</span></div><div class="proj-title">Distribution Centre Sim</div><p class="proj-desc">OOP simulation of a logistics centre with AGVs managing full delivery flow.</p><a href="https://github.com/rrmaduro/Distribution-Center-Simulation" target="_blank" rel="noopener" class="proj-link">GitHub →</a></div>
+      <div class="proj-card c5 fade-in"><div class="proj-lang-row"><div class="lang-dot dot-js"></div><span class="proj-lang">JavaScript · HTML · MySQL</span></div><div class="proj-title">ETSTBike SPA</div><p class="proj-desc">REST-based single-page app with JSON serialisation integrated into a legacy system.</p><a href="https://github.com/rrmaduro/ESTSBike" target="_blank" rel="noopener" class="proj-link">GitHub →</a></div>
     </div>
   </div>
 </section>
@@ -589,7 +523,7 @@
 <section id="contact">
   <div class="wrap">
     <div class="section-label">get in touch</div>
-    <div class="section-head"><h2 class="section-title">Con<span>tact</span></h2><div class="section-num">07</div></div>
+    <div class="section-head"><h2 class="section-title">Con<span>tact</span></h2><div class="section-num" aria-hidden="true">07</div></div>
     <div class="contact-grid">
       <div class="term-contact fade-in">
         <div class="terminal-bar">
@@ -610,10 +544,10 @@
         </div>
       </div>
       <div class="contact-links fade-in">
-        <a href="mailto:rodrigomaduro.pro@gmail.com" class="contact-link"><span class="cl-icon">✉</span><div><span class="cl-label">Email</span>rodrigomaduro.pro@gmail.com</div></a>
-        <a href="https://www.linkedin.com/in/rmaduro/" target="_blank" class="contact-link"><span class="cl-icon">in</span><div><span class="cl-label">LinkedIn</span>linkedin.com/in/rmaduro</div></a>
-        <a href="https://github.com/rrmaduro" target="_blank" class="contact-link"><span class="cl-icon">gh</span><div><span class="cl-label">GitHub</span>github.com/rrmaduro</div></a>
-        <a href="CV_English_Rodrigo_Maduro.pdf" download class="contact-link"><span class="cl-icon">↓</span><div><span class="cl-label">Curriculum Vitae</span>Download PDF</div></a>
+        <a href="mailto:rodrigomaduro.pro@gmail.com" class="contact-link" aria-label="Send an email to Rodrigo Maduro"><span class="cl-icon" aria-hidden="true">&#9993;</span><div><span class="cl-label">Email</span>rodrigomaduro.pro@gmail.com</div></a>
+        <a href="https://www.linkedin.com/in/rmaduro/" target="_blank" rel="noopener" class="contact-link" aria-label="Rodrigo Maduro on LinkedIn"><span class="cl-icon" aria-hidden="true">in</span><div><span class="cl-label">LinkedIn</span>linkedin.com/in/rmaduro</div></a>
+        <a href="https://github.com/rrmaduro" target="_blank" rel="noopener" class="contact-link" aria-label="Rodrigo Maduro on GitHub"><span class="cl-icon" aria-hidden="true">gh</span><div><span class="cl-label">GitHub</span>github.com/rrmaduro</div></a>
+        <a href="CV_English_Rodrigo_Maduro.pdf" download class="contact-link" aria-label="Download Rodrigo Maduro CV as PDF"><span class="cl-icon" aria-hidden="true">&#8595;</span><div><span class="cl-label">Curriculum Vitae</span>Download PDF</div></a>
       </div>
     </div>
   </div>
@@ -621,46 +555,66 @@
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-copy">© 2025 <span>Rodrigo Maduro</span> — Lisbon, Portugal</div>
+    <div class="footer-copy">© <span id="year">2026</span> <span>Rodrigo Maduro</span> · Lisbon, Portugal</div>
     <div class="footer-copy" style="font-size:1.1rem;">B.Sc. CS&amp;E · Junior IT Consultant</div>
   </div>
 </footer>
 
 <script>
+/* ── FOOTER YEAR ── */
+(function(){
+  const y=document.getElementById('year');
+  if(y)y.textContent=new Date().getFullYear();
+})();
+
 /* ── BOOT ── */
 (function(){
   const lines=[0,1,2,3,4];
   const bar=document.getElementById('boot-bar');
+  const boot=document.getElementById('boot');
+  let finished=false;
+  function finishBoot(){
+    if(finished)return;
+    finished=true;
+    boot.classList.add('done');
+    setTimeout(()=>boot.remove(),400);
+    bootAnimations();
+  }
   lines.forEach((i,idx)=>{
     setTimeout(()=>{
-      document.getElementById('bl'+i).classList.add('show');
+      const el=document.getElementById('bl'+i);
+      if(el)el.classList.add('show');
       bar.style.width=(((idx+1)/lines.length)*100)+'%';
-    },280*idx);
+    },140*idx);
   });
-  setTimeout(()=>{
-    document.getElementById('boot').classList.add('done');
-    setTimeout(()=>document.getElementById('boot').remove(),700);
-    bootAnimations();
-  },280*lines.length+600);
+  const autoTimer=setTimeout(finishBoot,140*lines.length+350);
+  boot.addEventListener('click',()=>{clearTimeout(autoTimer);finishBoot();});
+  window.addEventListener('keydown',function skipOnce(){clearTimeout(autoTimer);finishBoot();window.removeEventListener('keydown',skipOnce);},{once:true});
 })();
 
 function bootAnimations(){
+  const reduceMotion=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   /* particles */
-  const canvas=document.getElementById('particles');
-  const ctx=canvas.getContext('2d');
-  let W,H;
-  const pts=Array.from({length:55},()=>({x:Math.random()*9999,y:Math.random()*9999,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.4+.4,a:Math.random()*.3+.07}));
-  function resize(){W=canvas.width=innerWidth;H=canvas.height=innerHeight;}
-  resize();window.addEventListener('resize',resize);
-  (function draw(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;ctx.beginPath();ctx.arc(p.x%W,p.y%H,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(0,212,255,${p.a})`;ctx.fill();});requestAnimationFrame(draw);})();
+  if(!reduceMotion){
+    const canvas=document.getElementById('particles');
+    const ctx=canvas.getContext('2d');
+    let W,H;
+    const pts=Array.from({length:55},()=>({x:Math.random()*9999,y:Math.random()*9999,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.4+.4,a:Math.random()*.3+.07}));
+    function resize(){W=canvas.width=innerWidth;H=canvas.height=innerHeight;}
+    resize();window.addEventListener('resize',resize);
+    (function draw(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;ctx.beginPath();ctx.arc(p.x%W,p.y%H,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(0,212,255,${p.a})`;ctx.fill();});requestAnimationFrame(draw);})();
+  }
 
   /* grid parallax */
-  const grid=document.getElementById('grid-bg');
-  window.addEventListener('mousemove',e=>{
-    const dx=(e.clientX/innerWidth-.5)*14;
-    const dy=(e.clientY/innerHeight-.5)*14;
-    grid.style.backgroundPosition=`${dx}px ${dy}px`;
-  });
+  if(!reduceMotion){
+    const grid=document.getElementById('grid-bg');
+    window.addEventListener('mousemove',e=>{
+      const dx=(e.clientX/innerWidth-.5)*14;
+      const dy=(e.clientY/innerHeight-.5)*14;
+      grid.style.backgroundPosition=`${dx}px ${dy}px`;
+    });
+  }
 
   /* exp card glow */
   document.querySelectorAll('.exp-card').forEach(card=>{
@@ -679,17 +633,21 @@ function bootAnimations(){
   /* typewriter */
   const tw=document.getElementById('typewriter');
   const fullText='Junior IT Consultant at Timestamp, working daily with enterprise ITSM and ITOM platforms.\n\nFocused on IT Discovery, Configuration Management and APM. Curious about where all of this is heading: Cloud, Kubernetes and DevOps.';
-  let charIdx=0;
-  function typeNext(){
-    if(charIdx>fullText.length)return;
-    const slice=fullText.slice(0,charIdx);
-    const sE='Junior IT Consultant'.length;
-    let html=charIdx<=sE?`<strong style="color:var(--white)">${slice}</strong>`:`<strong style="color:var(--white)">Junior IT Consultant</strong>${slice.slice(sE).replace(/\n/g,'<br>')}`;
-    tw.innerHTML=html+'<span class="blink"></span>';
-    charIdx++;
-    setTimeout(typeNext,charIdx<22?55:18);
+  if(reduceMotion){
+    tw.innerHTML=`<strong style="color:var(--white)">Junior IT Consultant</strong>${fullText.slice('Junior IT Consultant'.length).replace(/\n/g,'<br>')}`;
+  } else {
+    let charIdx=0;
+    function typeNext(){
+      if(charIdx>fullText.length)return;
+      const slice=fullText.slice(0,charIdx);
+      const sE='Junior IT Consultant'.length;
+      let html=charIdx<=sE?`<strong style="color:var(--white)">${slice}</strong>`:`<strong style="color:var(--white)">Junior IT Consultant</strong>${slice.slice(sE).replace(/\n/g,'<br>')}`;
+      tw.innerHTML=html+'<span class="blink"></span>';
+      charIdx++;
+      setTimeout(typeNext,charIdx<22?38:10);
+    }
+    setTimeout(typeNext,700);
   }
-  setTimeout(typeNext,700);
 
   /* fade-in observer */
   const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.1});
@@ -708,8 +666,6 @@ function bootAnimations(){
   drawRadar();
   /* draw heatmap */
   drawHeatmap();
-  /* init map scrubber */
-  initScrubber();
   /* init contact terminal */
   initContact();
 }
@@ -718,7 +674,7 @@ function bootAnimations(){
 const cmdItems=[
   {label:'Experience',href:'#experience',key:'01'},
   {label:'Education', href:'#education', key:'02'},
-  {label:'Journey Map',href:'#journey',  key:'03'},
+  {label:'Journey',   href:'#journey',  key:'03'},
   {label:'Skills Radar',href:'#skills', key:'04'},
   {label:'Workload',  href:'#heatmap',  key:'05'},
   {label:'Projects',  href:'#projects', key:'06'},
@@ -744,64 +700,6 @@ function cmdKey(e){
 }
 function cmdGo(href){document.getElementById('cmd-overlay').classList.remove('open');if(href.startsWith('#')){document.querySelector(href).scrollIntoView({behavior:'smooth'});}else{window.open(href,'_blank');}}
 document.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement.tagName!=='INPUT'&&document.activeElement.tagName!=='TEXTAREA'){e.preventDefault();openCmd();}});
-
-/* ── MAP SCRUBBER ── */
-const mapPins=[
-  {id:'pin0',threshold:0,  year:'2018', color:'#f59e0b'},
-  {id:'pin1',threshold:28, year:'2022', color:'#818cf8'},
-  {id:'pin2',threshold:62, year:'Jul 2024', color:'#4ade80'},
-  {id:'pin3',threshold:88, year:'Sep 2025', color:'#38bdf8'},
-];
-const mapData=[
-  {year:'2018 · Swanage, UK',title:'Harrow House International College',desc:'English immersion programme. Upper intermediate level. Foundation for C1 Cambridge certification.',tags:[{l:'english',c:'#f59e0b',b:'rgba(245,158,11,.3)',bg:'rgba(245,158,11,.1)'}]},
-  {year:'2022 · Setúbal, PT',title:'B.Sc. Computer Science & Engineering',desc:'Instituto Politécnico de Setúbal. 180 ECTS. Programming, databases, software engineering. Final year ongoing.',tags:[{l:'academia',c:'#818cf8',b:'rgba(129,140,248,.3)',bg:'rgba(129,140,248,.1)'},{l:'ongoing',c:'#818cf8',b:'rgba(129,140,248,.3)',bg:'rgba(129,140,248,.1)'}]},
-  {year:'Jul 2024 · Seixal, PT',title:'Frontend Developer Intern — Petrotec',desc:'Industrial automation sector. Vue.js, Vuex, OTP auth with Node.js. Summer internship.',tags:[{l:'vue.js',c:'#4ade80',b:'rgba(74,222,128,.3)',bg:'rgba(74,222,128,.1)'},{l:'node.js',c:'#4ade80',b:'rgba(74,222,128,.3)',bg:'rgba(74,222,128,.1)'}]},
-  {year:'Sep 2025 · Lisbon, PT',title:'Junior IT Consultant — Timestamp',desc:'Enterprise ITSM & ITOM. UCMDB, Universal Discovery, AppDynamics, SMAX, Operations Orchestration.',tags:[{l:'itsm',c:'#38bdf8',b:'rgba(56,189,248,.3)',bg:'rgba(56,189,248,.1)'},{l:'apm',c:'#38bdf8',b:'rgba(56,189,248,.3)',bg:'rgba(56,189,248,.1)'},{l:'current',c:'#38bdf8',b:'rgba(56,189,248,.3)',bg:'rgba(56,189,248,.1)'}]},
-];
-function initScrubber(){
-  const scrubber=document.getElementById('scrubber');
-  scrubber.addEventListener('input',()=>updateMap(+scrubber.value));
-  updateMap(0);
-}
-function updateMap(val){
-  const yearEl=document.getElementById('scrubYear');
-  /* interpolate year label */
-  const years=[2018,2022,2024,2025.75];
-  let label='2018';
-  if(val<=28){label=Math.round(2018+(val/28)*4)+''; }
-  else if(val<=62){label=Math.round(2022+((val-28)/34)*2)+'';}
-  else if(val<=88){label=val>=80?'2024':'2023';}
-  else{label='2025';}
-  yearEl.textContent=label;
-  /* show/hide pins with animation */
-  mapPins.forEach(p=>{
-    const el=document.getElementById(p.id);
-    const show=val>=p.threshold;
-    el.style.transition='opacity .4s ease';
-    el.style.opacity=show?'1':'0';
-    el.style.pointerEvents=show?'auto':'none';
-  });
-  /* clip the route path */
-  const routeBg=document.getElementById('routeBg');
-  const routeLine=document.getElementById('routeLine');
-  const totalLen=routeBg.getTotalLength ? routeBg.getTotalLength() : 500;
-  const drawn=totalLen*(val/100);
-  [routeBg,routeLine].forEach(p=>{
-    p.style.strokeDasharray=totalLen;
-    p.style.strokeDashoffset=val===100?0:(totalLen-drawn);
-  });
-}
-let mapHideTimer;
-function mapHover(idx){
-  clearTimeout(mapHideTimer);
-  const d=mapData[idx];
-  document.getElementById('miYear').textContent=d.year;
-  document.getElementById('miTitle').textContent=d.title;
-  document.getElementById('miDesc').textContent=d.desc;
-  document.getElementById('miTags').innerHTML=d.tags.map(t=>`<span class="mi-tag" style="color:${t.c};border-color:${t.b};background:${t.bg}">${t.l}</span>`).join('');
-  document.getElementById('mapInfo').classList.add('show');
-}
-function mapOut(){mapHideTimer=setTimeout(()=>document.getElementById('mapInfo').classList.remove('show'),200);}
 
 /* ── RADAR ── */
 function drawRadar(){
@@ -919,14 +817,13 @@ function tcNext(){
   } else {
     document.getElementById('tcInputRow').style.display='none';
     appendTcLine(`<span class="sys">&nbsp;</span>`);
-    appendTcLine(`<span class="sys">[ compiling message... ]</span>`);
+    appendTcLine(`<span class="sys">[ preparing email... ]</span>`);
     setTimeout(()=>{
-      appendTcLine(`<span class="ok-msg">[ OK ] message queued for delivery.</span>`);
-      appendTcLine(`<span class="ok-msg">[ OK ] rodrigo will get back to you shortly.</span>`);
+      appendTcLine(`<span class="ok-msg">[ OK ] draft ready. click below to open it in your email app.</span>`);
       appendTcLine(`<span class="sys">&nbsp;</span>`);
       document.getElementById('tcSubmit').style.display='inline-flex';
       document.getElementById('tcReset').style.display='block';
-    },800);
+    },500);
   }
 }
 function appendTcLine(html){
@@ -938,12 +835,16 @@ function appendTcLine(html){
 }
 function submitContact(){
   const sub=document.getElementById('tcSubmit');
+  const subject=encodeURIComponent(`Portfolio contact from ${tcData.name}`);
+  const body=encodeURIComponent(`${tcData.message}\n\nFrom: ${tcData.name} (${tcData.email})`);
+  const mailto=`mailto:rodrigomaduro.pro@gmail.com?subject=${subject}&body=${body}`;
+  window.location.href=mailto;
   sub.disabled=true;
-  sub.textContent='sending...';
+  sub.textContent='opening email client...';
   setTimeout(()=>{
-    appendTcLine(`<span class="ok-msg">✓ message sent successfully.</span>`);
+    appendTcLine(`<span class="ok-msg">✓ your email app should now have a draft ready to send.</span>`);
     sub.style.display='none';
-  },1200);
+  },900);
 }
 function resetContact(){
   tcStep=0;tcData={};
